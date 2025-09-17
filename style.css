@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.mode-select button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #1d4ed8;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mode-select button:hover {
+  background: #2563eb;
+}
+
+#status {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.cell:hover {
+  background: #334155;
+}
+
+.reset {
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  background: #e11d48;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background: #be123c;
+}
+
+/* Winning highlight */
+.winning-cell {
+  background: #22c55e !important;
+  color: black;
+  font-weight: bold;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #22c55e; }
+  to { box-shadow: 0 0 20px #22c55e; }
+}
+
+/* Celebration Canvas */
+#celebration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
